@@ -1,27 +1,34 @@
 package profit;
 
 public class Salary {
-	 private double salary;
-	 private double commission;
+	 public double salary;
+	 public double commission;
+	 public double sales;
+	 public double payment;
 	
+	 public Salary() {}
+	 public Salary(double salary) {
+		 this.salary = salary;
+	 }
 	  public double getSalary() {
 	        return salary;
 	  }
 
-	   public void setSalary(double Salary) {
-	        this.salary = salary;
-	
-	  }
-	   public double getcommission() {
-	        return commission;
-	    }
-
-	    public void setcommission(double commission) {
-	        this.commission = commission;
-	    }  
-	    public void printSalary() {
-	    	  System.out.println("Salary:" + salary);
-	    	  System.out.println("Commission:" + commission);
+	   public void CalPayment(double sales) {
+		   if (salary>50000)
+			  {
+			   commission = sales*(3/100);
+			  } 
+		   else if (salary >25000){ 
+			   commission = sales*(2/100);
+			  }    
+		   else if(salary >0){
+			   commission = sales*(1/100);
+			   } 
+		   payment = salary+commission;
+		   }  
+	    public String toString() {
+	    	return  "Salary:" + salary +" Payment:" + payment;
 	    	  
 	        				
 	     }
