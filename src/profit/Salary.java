@@ -3,7 +3,7 @@ package profit;
 public class Salary {
 	 public double salary;
 	 public double commission;
-	 public double sales;
+	 Sales sales;
 	 public double payment;
 	
 	 public Salary() {}
