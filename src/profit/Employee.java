@@ -21,9 +21,7 @@ public class Employee {
         return emp_id;
     }
 	 
-    public void setEmp_id(String emp_id) {
-        this.emp_id = emp_id;
-    }
+
     public void printEmployee() {
         System.out.println("Name:"+ name );
         System.out.println("emp_id:"+ emp_id );
