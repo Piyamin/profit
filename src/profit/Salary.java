@@ -16,7 +16,7 @@ public class Salary {
 	        return salary;
 	  }
 
-	   public double  CalPayment(double sales,double salary) {
+	   public double CalPayment(double sales,double salary) {
 
 			   if (salary>50000)
 				  {
@@ -28,11 +28,10 @@ public class Salary {
 				   payment = salary + commission;
 				  }    
 			   else if(salary >0){
-				   commission = sales*(1/100);
+				   commission = sales*(1/100);  
 				   payment = salary + commission;
 				   } 
-			   
-		   
+		
 		return payment;
 		  
 		   

@@ -3,13 +3,16 @@ import java.util.Scanner;
 import java.util.ArrayList; 
 
 public class ProfitDemo {
+	private static final int Sales = 0;
+	private static final int Salary = 0;
 	static Scanner in = new Scanner(System.in);
 	static ArrayList<Employee> em = new ArrayList<Employee>();
 	static ArrayList<Salary> sa = new ArrayList<Salary>();
 	static ArrayList<Sales> sal = new ArrayList<Sales>();
+	private static int ArrayList;
 	public static void main(String[] args) {
 		int choice;
-		
+
 	do {
 		System.out.println("Please select Menu ");
 		System.out.println("[1] Add Employee");
@@ -26,7 +29,7 @@ public class ProfitDemo {
 		if (choice == 3) {
 			display(sa,sal);
 		}
-		System.out.print("\nDo you want to select [y/n]:");
+		System.out.print("\nDo you want to select menu [y/n]:");
 		choice = in.next().charAt(0);
 		}while(choice == 'y');				
 	}
@@ -71,8 +74,11 @@ public class ProfitDemo {
 		for (int i = 0; i < sa.size(); i++) {
 			System.out.println(sal.get(i).getSales());
 			double pay = sa.get(i).CalPayment(sal.get(i).getSales(),sa.get(i).getSalary());
+			double pm = sa.get(i).CalPayment(sa.get(i).getSalary(),sal.get(i).getSales());
+			double sum = pay+pm;
 			System.out.println(pay);
-			System.out.println("Name :"+em.get(i).getName()+"  Payment= "+pay);
+			System.out.println("Name : "+ em.get(i).getName() +"  Payment = "+ sum );
 		}
 	}
+	
 }
