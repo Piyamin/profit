@@ -46,20 +46,22 @@ public class ProfitDemo {
 	}
 	public static void insertSales () {
 		String name ,id;
-		double sales;
+		double sales; 
 		char choose = 'y';
-		do {	System.out.print("Please insert ID :");			
+		do {		
 			for (int i = 0; i < sa.size(); i++) {	
-				id = in.next();
-				if(em.get(i).equals(id)) {
+				System.out.print("\nPlease insert ID :");	
+				id = in.next();	
+				if((em.get(i).getEmp_id()).equals(id)) {
 					System.out.print("\nPlease insert sales :");
 					sales = in.nextDouble();
 					sal.add(new Sales(sales));
 				}
-			}	
+			}
 		System.out.print("\nDo you have ID  [y/n]:");
 		choose = in.next().charAt(0);
 		}while(choose == 'y');
+		
 	}
 
 
