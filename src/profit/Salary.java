@@ -17,16 +17,20 @@ public class Salary {
 	  }
 
 	   public void CalPayment(double sales,double salary) {
-			   if (sales>100000)
+		   	if(sales<18000) {
+		   			commission = 18000;
+					   payment = salary + commission;
+		   		}
+		   	else if (sales>50000)
 				  {
 				   commission = sales*(3.0/100);
 				   payment = salary + commission;
 			  } 
-			   else if (sales >50000){ 
+			else if (sales >25000){ 
 				   commission = sales*(2.0/100);
 				   payment = salary + commission;
 				  }    
-			   else if(sales >0){
+			else if(sales >0){
 				   commission = sales*(1.0/100);  
 				   payment = salary + commission;
 				   } 
