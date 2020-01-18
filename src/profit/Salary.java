@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Salary {
 	 public double salary;
-	 public double commission;
+	 public double commission=0;
 	 Sales sales;
 	 public double payment;
 	
@@ -16,23 +16,22 @@ public class Salary {
 	        return salary;
 	  }
 
-	   public double CalPayment(double sales,double salary) {
-
-			   if (salary>50000)
+	   public void CalPayment(double sales,double salary) {
+			   if (sales>50000)
 				  {
-				   commission = sales*(3/100);
+				   commission = sales*(3.0/100);
 				   payment = salary + commission;
 			  } 
-			   else if (salary >25000){ 
-				   commission = sales*(2/100);
+			   else if (sales >25000){ 
+				   commission = sales*(2.0/100);
 				   payment = salary + commission;
 				  }    
-			   else if(salary >0){
-				   commission = sales*(1/100);  
+			   else {
+				   commission = sales*(1.0/100);  
 				   payment = salary + commission;
 				   } 
 		
-		return payment;
+		System.out.println("Payment = "+payment);
 		  
 		   
 	   }  

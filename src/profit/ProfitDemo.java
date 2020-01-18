@@ -72,12 +72,9 @@ public class ProfitDemo {
 
 	public static void display(ArrayList<Salary> sa,ArrayList<Sales> sal) {
 		for (int i = 0; i < sa.size(); i++) {
-			System.out.println(sal.get(i).getSales());
-			double pay = sa.get(i).CalPayment(sal.get(i).getSales(),sa.get(i).getSalary());
-			double pm = sa.get(i).CalPayment(sa.get(i).getSalary(),sal.get(i).getSales());
-			double sum = pay+pm;
-			System.out.println(pay);
-			System.out.println("Name : "+ em.get(i).getName() +"  Payment = "+ sum );
+			System.out.println("Name : "+ em.get(i).getName() );
+			sa.get(i).CalPayment(sal.get(i).getSales(), sa.get(i).getSalary());
+			
 		}
 	}
 	
