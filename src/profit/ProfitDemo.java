@@ -44,7 +44,7 @@ public class ProfitDemo {
 		choose = in.next().charAt(0);
 		}while(choose == 'y');
 	}
-	public static void insertSales () {
+	public static void insertSales () {  
 		String name ,id;
 		double sales; 
 		char choose = 'y';
