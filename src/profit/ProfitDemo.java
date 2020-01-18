@@ -3,17 +3,21 @@ import java.util.Scanner;
 import java.util.ArrayList; 
 
 public class ProfitDemo {
+	private static final int Sales = 0;
+	private static final int Salary = 0;
 	static Scanner in = new Scanner(System.in);
 	static ArrayList<Employee> em = new ArrayList<Employee>();
 	static ArrayList<Salary> sa = new ArrayList<Salary>();
 	static ArrayList<Sales> sal = new ArrayList<Sales>();
+	private static int ArrayList;
 	public static void main(String[] args) {
 		int choice;
-		
+
 	do {
 		System.out.println("Please select Menu ");
 		System.out.println("[1] Add Employee");
 		System.out.println("[2] Save sales ");
+		System.out.println("[3] Display ");
 		choice = in.nextInt();
 		if (choice ==1) {
 			insertEmployee ();
@@ -22,10 +26,12 @@ public class ProfitDemo {
 			
 			insertSales ();
 		}
-		System.out.print("\nDo you want to select [y/n]:");
+		if (choice == 3) {
+			display(sa,sal);
+		}
+		System.out.print("\nDo you want to select menu [y/n]:");
 		choice = in.next().charAt(0);
-		}while(choice == 'y');
-				
+		}while(choice == 'y');				
 	}
 	public static void insertEmployee () {
 		String name ,id;
@@ -64,5 +70,15 @@ public class ProfitDemo {
 		
 	}
 
-
+	public static void display(ArrayList<Salary> sa,ArrayList<Sales> sal) {
+		for (int i = 0; i < sa.size(); i++) {
+			System.out.println(sal.get(i).getSales());
+			double pay = sa.get(i).CalPayment(sal.get(i).getSales(),sa.get(i).getSalary());
+			double pm = sa.get(i).CalPayment(sa.get(i).getSalary(),sal.get(i).getSales());
+			double sum = pay+pm;
+			System.out.println(pay);
+			System.out.println("Name : "+ em.get(i).getName() +"  Payment = "+ sum );
+		}
+	}
+	
 }

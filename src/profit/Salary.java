@@ -1,5 +1,7 @@
 package profit;
 
+import java.util.ArrayList;
+
 public class Salary {
 	 public double salary;
 	 public double commission;
@@ -14,22 +16,30 @@ public class Salary {
 	        return salary;
 	  }
 
-	   public void CalPayment(double sales) {
-		   if (salary>50000)
-			  {
-			   commission = sales*(3/100);
+	   public double CalPayment(double sales,double salary) {
+
+			   if (salary>50000)
+				  {
+				   commission = sales*(3/100);
+				   payment = salary + commission;
 			  } 
-		   else if (salary >25000){ 
-			   commission = sales*(2/100);
-			  }    
-		   else if(salary >0){
-			   commission = sales*(1/100);
-			   } 
-		   payment = salary+commission;
-		   }  
+			   else if (salary >25000){ 
+				   commission = sales*(2/100);
+				   payment = salary + commission;
+				  }    
+			   else if(salary >0){
+				   commission = sales*(1/100);  
+				   payment = salary + commission;
+				   } 
+		
+		return payment;
+		  
+		   
+	   }  
 	    public String toString() {
 	    	return  "Salary:" + salary +" Payment:" + payment;
 	    	  
 	        				
 	     }
+
 }

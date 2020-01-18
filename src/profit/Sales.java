@@ -6,4 +6,8 @@ public class Sales {
 	public Sales (double sales) {
 		this.sales = sales;
 	}
+	public double getSales() {
+		return sales;
+	}
+	
 }
